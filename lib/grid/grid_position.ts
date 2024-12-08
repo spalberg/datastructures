@@ -3,8 +3,9 @@ import {
   type Direction,
   getDirectionVector,
   turn,
-} from "../direction/mod.ts";
+} from "./direction.ts";
 import type { Grid } from "./grid.ts";
+import { Vec } from "./vec.ts";
 
 export class GridPosition<T> {
   #grid: Grid<T>;
@@ -71,6 +72,10 @@ export class GridPosition<T> {
       }
       yield position = next;
     }
+  }
+
+  getDisplacementVector(other: GridPosition<T>): Vec {
+    return new Vec(other.#x - this.#x, other.#y - this.#y);
   }
 
   createPosition(x: number, y: number): GridPosition<T> {

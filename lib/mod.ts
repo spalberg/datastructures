@@ -1,2 +1,2 @@
-export { DirectedGridPosition, Grid, GridPosition } from "./grid/mod.ts";
+export { DirectedGridPosition, Grid, GridPosition, Vec } from "./grid/mod.ts";
 export { Vector } from "./vector/mod.ts";

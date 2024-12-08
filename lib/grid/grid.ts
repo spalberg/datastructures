@@ -54,6 +54,18 @@ export class Grid<T> {
     return null;
   }
 
+  findAll(predicate: (value: T) => boolean): Array<[number, number]> {
+    const results: Array<[number, number]> = [];
+    for (let y = 0; y < this.height; y++) {
+      for (let x = 0; x < this.width; x++) {
+        if (predicate(this.at(x, y)!)) {
+          results.push([x, y]);
+        }
+      }
+    }
+    return results;
+  }
+
   isInBounds(x: number, y: number): boolean {
     return x >= 0 && x < this.width && y >= 0 && y < this.height;
   }

@@ -1,6 +1,6 @@
 import { expect } from "@std/expect";
 import { describe, it } from "@std/testing/bdd";
-import type { Direction } from "../direction/mod.ts";
+import type { Direction } from "./direction.ts";
 import { Grid } from "./grid.ts";
 import { DirectedGridPosition, GridPosition } from "./grid_position.ts";
 
